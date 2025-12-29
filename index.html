@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Gamer - Login</title>
+
+    <!-- Fonte Gamer -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Letras animadas -->
+    <div class="letrasAnimadas"></div>
+
+    <!-- Login -->
+    <div class="container" id="loginBox">
+        <h2>LOGIN</h2>
+
+        <input type="text" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginSenha" placeholder="Senha">
+
+        <button onclick="login()">Entrar</button>
+
+        <p class="link" onclick="mostrarCadastro()">Criar conta</p>
+    </div>
+
+    <!-- Cadastro -->
+    <div class="container" id="cadastroBox" style="display: none;">
+        <h2>CADASTRO</h2>
+
+        <input type="text" id="cadEmail" placeholder="Email">
+        <input type="password" id="cadSenha" placeholder="Senha">
+
+        <button onclick="cadastrar()">Cadastrar</button>
+
+        <p class="link" onclick="mostrarLogin()">Já tenho conta</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
