@@ -56,5 +56,56 @@ function login() {
         alert("Email ou senha incorretos!");
     }
 }
-  
 
+// LETRAS ANIMADAS
+const letras = ["HTML", "CSS", "JS", "<DIV>", "</CODE>", "{ }", "</>"];
+
+function criarLetra() {
+    const span = document.createElement("span");
+    span.classList.add("letra");
+    span.innerText = letras[Math.floor(Math.random() * letras.length)];
+    
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.querySelector(".letrasAnimadas").appendChild(span);
+
+    setTimeout(() => span.remove(), 6000);
+}
+
+setInterval(criarLetra, 300);
+function login() {
+    const email = document.getElementById('loginEmail').value;
+    const senha = document.getElementById('loginSenha').value;
+
+    fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+
+function cadastrar() {
+    const email = document.getElementById('cadEmail').value;
+    const senha = document.getElementById('cadSenha').value;
+
+    fetch('http://localhost:3000/cadastro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message));
+}
+
+function mostrarCadastro() {
+    document.getElementById('loginBox').style.display = 'none';
+    document.getElementById('cadastroBox').style.display = 'block';
+}
+
+function mostrarLogin() {
+    document.getElementById('cadastroBox').style.display = 'none';
+    document.getElementById('loginBox').style.display = 'block';
+}
