@@ -56,21 +56,5 @@ function login() {
         alert("Email ou senha incorretos!");
     }
 }
+  
 
-// LETRAS ANIMADAS
-const letras = ["HTML", "CSS", "JS", "<DIV>", "</CODE>", "{ }", "</>"];
-
-function criarLetra() {
-    const span = document.createElement("span");
-    span.classList.add("letra");
-    span.innerText = letras[Math.floor(Math.random() * letras.length)];
-    
-    span.style.left = Math.random() * 100 + "vw";
-    span.style.animationDuration = (Math.random() * 3 + 3) + "s";
-
-    document.querySelector(".letrasAnimadas").appendChild(span);
-
-    setTimeout(() => span.remove(), 6000);
-}
-
-setInterval(criarLetra, 300);
