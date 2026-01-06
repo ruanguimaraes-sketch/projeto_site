@@ -42,12 +42,20 @@ function cadastrar() {
 }
 
 function login() {
+    function login() {
     const email = document.getElementById("loginEmail").value;
     const senha = document.getElementById("loginSenha").value;
 
-    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const emailCorreto = "admin@gmail.com";
+    const senhaCorreta = "123456";
 
-    const user = usuarios.find(u => u.email === email && u.senha === senha);
+    if (email === emailCorreto && senha === senhaCorreta) {
+        alert("Login realizado com sucesso!");
+        window.location.href = "jogo.html"; // página que entra
+    } else {
+        alert("Email ou senha incorretos!");
+    }
+}
 
     if (user) {
         alert("Login realizado com sucesso!");
@@ -109,3 +117,5 @@ function mostrarLogin() {
     document.getElementById('cadastroBox').style.display = 'none';
     document.getElementById('loginBox').style.display = 'block';
 }
+
+
